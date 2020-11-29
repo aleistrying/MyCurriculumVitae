@@ -1,4 +1,3 @@
-docker run --rm -it \
+docker run --rm --name peqa.dev-maven \
            -v "$PWD/project:/usr/src" \
-           -u 1000 \
-           peqa.dev/tutorials/maven:latest $@
+           -it peqa.dev/tutorials/maven:latest $@
