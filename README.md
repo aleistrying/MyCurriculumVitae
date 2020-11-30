@@ -23,7 +23,6 @@ Docker es una plataforma abierta para desarrollar, enviar y ejecutar aplicacione
 
 Para más información: https://www.docker.com/why-docker
 
-
 ## Inicialización del proyecto maven
 
 Para el proceso de iniciación, se debe ejecutar el script:
@@ -38,10 +37,14 @@ Este script elimina la carpeta `project` (si existe), luego construye un nuevo p
 
 Todos los valores mencionados pueden ser editados directamente en el archivo: `docker_restar_maven_project.sh`.
 
-## Ejecución de proyecto maven
+## Ejecución de comandos dentro del contenedor
 
 Una vez se haya creado la carpeta inicial, se puede ejecutar el comando:
 
 ```docker_run.sh <comando_de_maven>```
 
-Este script 
+Este script ejecuta o el compando por defecto de la imagen descrita en el `Dockerfile`, o
+
+## Ejecución de los scripts en Windows
+
+Para ejecutar estos scripts en windows, asegúrese de tener algún intérprete de bash donde ejecutarlos, por ejemplo: [git bash](https://git-scm.com/download/win)
