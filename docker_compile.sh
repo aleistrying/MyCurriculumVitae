@@ -1,11 +1,11 @@
 #!/bin/bash
 #===============================================================================
 #
-#          FILE:  docker_restart_maven_project.sh
+#          FILE:  docker_compile.sh
 #
-#         USAGE:  ./docker_restart_maven_project.sh
+#         USAGE:  ./docker_compile.sh
 #
-#   DESCRIPTION: Inicializa o reinicializa un proyecto maven llamado: `project`.
+#   DESCRIPTION: Comila el proyecto de maven.
 #
 #       OPTIONS:  ---
 #  REQUIREMENTS:  ---
@@ -27,23 +27,10 @@ MAVEN_PROJECT_NAME=example_name
 #===============================================================================
 # Script Logic #================================================================
 #===============================================================================
-# Elimina la carpeta `project` si existe.
-sudo rm -rf $MAVEN_DIRECTORY
 
 # Inicializa el proyecto de maven usando el plugin: `maven-archetype-quickstart`
-$PWD/docker_run.sh mvn archetype:generate \
-                    -DgroupId=com.peqa.$MAVEN_PROJECT_NAME \
-                    -DartifactId=$MAVEN_PROJECT_NAME \
-                    -DarchetypeArtifactId=maven-archetype-quickstart \
-                    -DinteractiveMode=false
+$PWD/docker_run.sh mvn -f $MAVEN_PROJECT_NAME/pom.xml package
 
 # Corrige los permisos de la carpeta `project` que fue generada dentro de maven
 # con permisos de root.
 sudo chown -R $USER:$(id -gn $USER) ./$MAVEN_DIRECTORY
-
-# Agrega el compiler source para evirar un error de compilación en esta versión
-# de Maven.
-DOCKER_PWD=$PWD/docker_run.sh pwd
-COMPILER_FIX="<properties>\n<maven.compiler.source>11</maven.compiler.source>\n<maven.compiler.target>11</maven.compiler.target>\n</properties>"
-COMPILER_FIX_PROCESSED=$(echo $COMPILER_FIX | sed 's/\//\\\//g')
-sed "/<\/project>/ s/.*/${COMPILER_FIX_PROCESSED}\n&/" $DOCKER_PWD/$MAVEN_PROJECT_NAME/pom.xml

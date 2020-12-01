@@ -30,10 +30,10 @@ Para el proceso de iniciación, se debe ejecutar el script:
 ```docker_restart_maven_project.sh```
 
 Este script elimina la carpeta `project` (si existe), luego construye un nuevo proyecto, basado en los siguientes parámetros:
-- DgroupId={NombreDelGrupo}: Refiriéndose al "namespace" en el que el proyecto existe. Generalmente se utiliza nuestro nombre de dominio. Por ejemplo, si nuestro dominio es: peqa.com, colocaríamos `com.peqa.<proyecto>`. Parecería redundante la parte del `<proyecto>` con el atributo `DartifactId`, porque generaría el nombre de artefacto como: com.peqa.todolist:todolist. Donde el todolist que está antes de `:` es en referencia al groupID y el todolist que está después, es referente al artifactId. Sin embargo, hacerlo así, nos permite luego dividir el proyecto en librerías más pequeñas.
-- DartifactId={NombreDelProyecto}: Es el propio nombre del proyecto. Cuando se construye el archivo .jar, el mismo tendrá este nombre.
-- DarchetypeArtifactId={Plantilla}: Es el nombre del maven plug-in a utilizar.
-- DinteractiveMode=false: Es hacer que el `batch-mode` utilice todos los valores por defecto durante la ejecución de maven.
+- **DgroupId={NombreDelGrupo}:** Refiriéndose al "namespace" en el que el proyecto existe. Generalmente se utiliza nuestro nombre de dominio. Por ejemplo, si nuestro dominio es: peqa.com, colocaríamos `com.peqa.<proyecto>`. Parecería redundante la parte del `<proyecto>` con el atributo `DartifactId`, porque generaría el nombre de artefacto como: com.peqa.todolist:todolist. Donde el todolist que está antes de `:` es en referencia al groupID y el todolist que está después, es referente al artifactId. Sin embargo, hacerlo así, nos permite luego dividir el proyecto en librerías más pequeñas.
+- **DartifactId={NombreDelProyecto}:** Es el propio nombre del proyecto. Cuando se construye el archivo .jar, el mismo tendrá este nombre.
+- **DarchetypeArtifactId={Plantilla}:** Es el nombre del maven plug-in a utilizar.
+- **DinteractiveMode=false:** Es hacer que el `batch-mode` utilice todos los valores por defecto durante la ejecución de maven.
 
 Todos los valores mencionados pueden ser editados directamente en el archivo: `docker_restar_maven_project.sh`.
 
@@ -43,7 +43,7 @@ Una vez se haya creado la carpeta inicial, se puede ejecutar el comando:
 
 ```docker_run.sh <comando_de_maven>```
 
-Este script ejecuta o el compando por defecto de la imagen descrita en el `Dockerfile`, o
+Este script ejecuta o el compando por defecto de la imagen descrita en el `Dockerfile`, o el comando arbitrario que se desee lanzar dentro del contenedor.
 
 ## Ejecución de los scripts en Windows
 
