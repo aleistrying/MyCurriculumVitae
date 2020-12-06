@@ -22,30 +22,6 @@ maven_compiler_target = ElementTree.SubElement(
     properties, 'maven.target.source')
 maven_compiler_target.text = '1.8'
 
-# Generate build elements
-# build = ElementTree.Element("build")
-# plugins = ElementTree.SubElement(build, 'plugins')
-# plugin = ElementTree.SubElement(plugins, 'plugin')
-# group_id = ElementTree.SubElement(plugin, 'groupId')
-# group_id.text = 'org.apache.maven.plugins'
-# artifact_id = ElementTree.SubElement(plugin, 'artifactId')
-# artifact_id.text = 'maven-jar-plugin'
-# version = ElementTree.SubElement(plugin, 'version')
-# version.text = '3.1.0'
-# configuration = ElementTree.SubElement(plugin, 'configuration')
-# source = ElementTree.SubElement(configuration, 'source')
-# source.text = '1.8'
-# target = ElementTree.SubElement(configuration, 'target')
-# target.text = '1.8'
-# archive = ElementTree.SubElement(configuration, 'archive')
-# manifest = ElementTree.SubElement(archive, 'manifest')
-# add_class_path = ElementTree.SubElement(manifest, 'addClasspath')
-# add_class_path.text = 'true'
-# class_path_prefix = ElementTree.SubElement(manifest, 'classpathPrefix')
-# class_path_prefix.text = 'lib'
-# main_class = ElementTree.SubElement(manifest, 'mainClass')
-# main_class.text = 'com.peqa.example_name.App'
-
 # Generate new elements
 properties_str = """
 <properties>
@@ -56,19 +32,49 @@ properties_str = """
 properties = ElementTree.fromstring(properties_str)
 build_str = """
 <build>
-    <pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </pluginManagement>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.6.0</version>
+            <configuration>
+                <source>1.8</source>
+                <target>1.8</target>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-shade-plugin</artifactId>
+            <version>2.4.3</version>
+            <configuration>
+                <filters>
+                    <filter>
+                        <artifact>*:*</artifact>
+                        <excludes>
+                            <exclude>META-INF/*.SF</exclude>
+                            <exclude>META-INF/*.DSA</exclude>
+                            <exclude>META-INF/*.RSA</exclude>
+                        </excludes>
+                    </filter>
+                </filters>
+            </configuration>
+            <executions>
+                <execution>
+                    <phase>package</phase>
+                    <goals>
+                        <goal>shade</goal>
+                    </goals>
+                    <configuration>
+                        <transformers>
+                            <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <mainClass>com.peqa.example_name.App</mainClass>
+                            </transformer>
+                        </transformers>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
 </build>
 """
 build = ElementTree.fromstring(build_str)

@@ -29,4 +29,4 @@ PROJECT_ENTRYPOINT=com.peqa.example_name.App
 #===============================================================================
 # Script Logic #================================================================
 #===============================================================================
-./docker_run.sh java -cp $MAVEN_PROJECT_NAME/target/$MAVEN_PROJECT_NAME-1.0-SNAPSHOT.jar $PROJECT_ENTRYPOINT
+./docker_run.sh java -jar $MAVEN_PROJECT_NAME/target/$MAVEN_PROJECT_NAME-1.0-SNAPSHOT.jar $PROJECT_ENTRYPOINT
