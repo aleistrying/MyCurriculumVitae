@@ -1,12 +1,11 @@
 #!/bin/bash
 #===============================================================================
 #
-#          FILE:  docker_run.sh
+#          FILE:  docker_stop.sh
 #
-#         USAGE:  ./docker_run.sh
+#         USAGE:  ./docker_stop.sh
 #
-#   DESCRIPTION: Ejecuta el comando por defecto o uno arbritario de la imagen 
-#                generada en base al Dockerfile.
+#   DESCRIPTION: Detiene un contenedor que esté ejecutando.
 #
 #       OPTIONS:  ---
 #  REQUIREMENTS:  ---
@@ -22,7 +21,6 @@
 #===============================================================================
 # Script Variables #============================================================
 #===============================================================================
-MAVEN_DIRECTORY=project
 DOCKER_CONTAINER_NAME=peqa.docker-maven
 DOCKER_IMAGE_NAME=peqa.dev/tutorials/docker-maven
 DOCKER_IMAGE_TAG=latest
@@ -30,6 +28,6 @@ DOCKER_IMAGE_TAG=latest
 #===============================================================================
 # Script Logic #================================================================
 #===============================================================================
-docker run --rm --name $DOCKER_CONTAINER_NAME \
+docker run --name $DOCKER_CONTAINER_NAME \
            -v "$PWD/$MAVEN_DIRECTORY:/usr/src" \
            -it $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG $@

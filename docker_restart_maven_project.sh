@@ -23,6 +23,7 @@
 #===============================================================================
 MAVEN_DIRECTORY=project
 MAVEN_PROJECT_NAME=example_name
+FIX_XML_FILE=pom.base.py
 
 #===============================================================================
 # Script Logic #================================================================
@@ -43,7 +44,5 @@ sudo chown -R $USER:$(id -gn $USER) ./$MAVEN_DIRECTORY
 
 # Agrega el compiler source para evirar un error de compilación en esta versión
 # de Maven.
-DOCKER_PWD=$PWD/docker_run.sh pwd
-COMPILER_FIX="<properties>\n<maven.compiler.source>11</maven.compiler.source>\n<maven.compiler.target>11</maven.compiler.target>\n</properties>"
-COMPILER_FIX_PROCESSED=$(echo $COMPILER_FIX | sed 's/\//\\\//g')
-sed "/<\/project>/ s/.*/${COMPILER_FIX_PROCESSED}\n&/" $DOCKER_PWD/$MAVEN_PROJECT_NAME/pom.xml
+POM_FILE=$PWD/$MAVEN_DIRECTORY/$MAVEN_PROJECT_NAME/pom.xml
+python $FIX_XML_FILE $POM_FILE
