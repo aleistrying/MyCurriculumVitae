@@ -29,3 +29,7 @@ DOCKER_CONTAINER_TAG=latest
 # Script Logic #================================================================
 #===============================================================================
 docker build -t $DOCKER_CONTAINER_NAME:$DOCKER_CONTAINER_TAG . 
+
+# Update and install python if needed
+sudo apt-get -y update
+sudo apt-get -y install python3 python3-pip ipython3

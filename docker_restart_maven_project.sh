@@ -45,4 +45,4 @@ sudo chown -R $USER:$(id -gn $USER) ./$MAVEN_DIRECTORY
 # Agrega el compiler source para evirar un error de compilación en esta versión
 # de Maven.
 POM_FILE=$PWD/$MAVEN_DIRECTORY/$MAVEN_PROJECT_NAME/pom.xml
-python $FIX_XML_FILE $POM_FILE
+python3 $FIX_XML_FILE $POM_FILE
