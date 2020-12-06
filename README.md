@@ -45,6 +45,12 @@ Una vez se haya creado la carpeta inicial, se puede ejecutar el comando:
 
 Este script ejecuta o el compando por defecto de la imagen descrita en el `Dockerfile`, o el comando arbitrario que se desee lanzar dentro del contenedor.
 
+## Ejecución del proyecto en general
+1. `./docker_build.sh`
+1. `./docker_restart_maven_project.sh` (Solamente la primera vez)
+1. `./docker_compile.sh`
+1. `./docker_run_webserver.sh`
+
 ## Ejecución de los scripts en Windows
 
 Para ejecutar estos scripts en windows, asegúrese de tener algún intérprete de bash donde ejecutarlos, por ejemplo: [git bash](https://git-scm.com/download/win)
