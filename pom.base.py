@@ -1,7 +1,6 @@
 import sys
 import os
 
-from xml.dom import minidom
 from xml.etree import ElementTree
 
 # Verifying if the filename exist
@@ -12,15 +11,6 @@ try:
 except Exception as e:
     raise e
 root = ElementTree.parse(filename).getroot()
-
-# Generate properties for compiler
-properties = ElementTree.Element("properties")
-maven_compiler_source = ElementTree.SubElement(
-    properties, 'maven.compiler.source')
-maven_compiler_source.text = '1.8'
-maven_compiler_target = ElementTree.SubElement(
-    properties, 'maven.target.source')
-maven_compiler_target.text = '1.8'
 
 # Generate new elements
 properties_str = """
