@@ -1,0 +1,110 @@
+{
+	"info": {
+		"_postman_id": "b3c90da9-8849-4d47-bf81-91e4cefc7413",
+		"name": "2020-SEMII-DESIV-G1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "semestral",
+			"item": [
+				{
+					"name": "http://localhost:4567/datos-generales",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4567/datos-generales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4567",
+							"path": [
+								"datos-generales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4567/datos-generales",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Ejemplo\",\r\n    \"edad\": \"10\",\r\n    \"abstracto\": \"Este es un abstracto\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4567/datos-generales",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4567",
+							"path": [
+								"datos-generales"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4567/estudios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:4567/estudios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4567",
+							"path": [
+								"estudios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:4567/estudios",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"institucion\": \"Ejemplo\",\r\n    \"titulo\": \"Ejemplo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4567/estudios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4567",
+							"path": [
+								"estudios"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
