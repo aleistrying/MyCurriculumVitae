@@ -32,19 +32,32 @@ public class App {
     public static void main( String[] args ) {
         // Set up a simple configuration that logs on the console.
         BasicConfigurator.configure();
-        DatosGenerales dg = inicializarDatosGenerales("Erick Agrazal", "29", "Yo soy un desarrollador empedernido.");
+        DatosGenerales datosGenerales = inicializarDatosGenerales("Erick Agrazal", "29", "Yo soy un desarrollador empedernido.");
+        Estudios estudios = inicializarEstudios();
         get("/datos-generales", (req, res) -> {
             res.type("application/json");
-            JSONObject jo = new JSONObject(dg);
+            JSONObject jo = new JSONObject(datosGenerales);
+            return jo;
+        });
+        get("/estudios", (req, res) -> {
+            res.type("application/json");
+            JSONObject jo = new JSONObject(estudios);
             return jo;
         });
     }
 
     public static DatosGenerales inicializarDatosGenerales(String _nombre, String _edad, String _abstracto){
-        DatosGenerales dg = new DatosGenerales();
-        dg.setNombre(_nombre);
-        dg.setEdad(_edad);
-        dg.setAbstracto(_abstracto);
-        return dg;
+        DatosGenerales datosGenerales = new DatosGenerales();
+        datosGenerales.setNombre(_nombre);
+        datosGenerales.setEdad(_edad);
+        datosGenerales.setAbstracto(_abstracto);
+        return datosGenerales;
+    }
+    public static Estudios inicializarEstudios(){
+        Estudios estudios = new Estudios();
+        estudios.agregarEstudio("Universidad Tecnológica de Panamá", "Ingeniero en sistemas");
+        estudios.agregarEstudio("Universidad Tecnológica de Panamá", "Maestría en seguridad informática");
+        estudios.agregarEstudio("Universidad Latina de Panamá", "Maestría en docencia superior");
+        return estudios;
     }
 }
