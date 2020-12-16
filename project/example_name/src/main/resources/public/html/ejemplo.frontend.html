@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="datos-generales"></div>
+    <script>
+        (() => {
+          const App = {
+            URI: {
+              baseURL: "https//localhost:4567/v1/api",
+              Routes: {
+                CV: baseURL + "/CurriculumVitae",
+              },
+            },
+            init: async () => {
+              const datosGenerales = await App.Requests.getDatosGenerales();
+              App.drawDatosGenerales(datosGenerales);
+            },
+            drawDatosGenerales: ({ abstracto, edad, nombre }) => {
+              const datosGeneralesHTML = document.getElementById(
+                "datos-generales"
+              );
+              datosGeneralesHTML.innerHTML = `<p>${nombre}</p><p>${edad}</p><p>${abstracto}</p>`;
+            },
+            Requests: {
+              getDatosGenerales: async () => {
+                return App.Utils.fetch(App.URI.Routes.CV);
+              },
+            },
+            Utils: {
+              fetch: async (url) => {
+                const response = await fetch(url);
+                return response.json();
+              },
+            },
+          };
+          App.init();
+        })();
+      </script>
+  </body>
+</html>

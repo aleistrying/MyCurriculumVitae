@@ -6,6 +6,7 @@ import static spark.Spark.put;
 import static spark.Spark.options;
 import static spark.Spark.before;
 import static spark.Spark.staticFileLocation;
+import static spark.Spark.staticFiles;
 import org.apache.log4j.Logger;
 import org.apache.log4j.BasicConfigurator;
 import org.json.JSONObject;
@@ -38,14 +39,19 @@ public class App {
 
         BasicConfigurator.configure();
 
-        staticFileLocation("/resources/public");
+        staticFiles.location("/public");
+        // staticFileLocation("/public");
         // home route
 
         // get(Path.Web.HOME, "text/html", (req, res) -> {
         // return IndexController.serveHomePage(req, res);
         // });
 
-        // get(Path.Web.HOME, "aplication/json", (req, res) ->
+        get(Path.Web.HOME, (req, res) -> {
+            res.status(200);
+            res.redirect("/html/index.html");
+            return "";
+        });
         // IndexController.serveHomePage(req, res));
         // System.out.println("CV PATH" + Path.Web.GET_CV);
         get(Path.Web.GET_CV, (req, res) -> CVController.serveCV(req, res, profesionals));
