@@ -32,7 +32,7 @@ FIX_XML_FILE=pom.base.py
 sudo rm -rf $MAVEN_DIRECTORY
 
 # Inicializa el proyecto de maven usando el plugin: `maven-archetype-quickstart`
-$PWD/docker_run.sh mvn archetype:generate \
+sudo $PWD/docker_run.sh mvn archetype:generate \
                     -DgroupId=com.peqa.$MAVEN_PROJECT_NAME \
                     -DartifactId=$MAVEN_PROJECT_NAME \
                     -DarchetypeArtifactId=maven-archetype-quickstart \

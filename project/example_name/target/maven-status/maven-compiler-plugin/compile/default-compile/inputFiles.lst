@@ -1,1 +1,17 @@
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/personStructure/SocialLink.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/personStructure/TechnicalSkills.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/personStructure/Educations.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/controller/IndexController.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/constants/Path.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/personStructure/Experience.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/Profesional.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/personStructure/SocialLinks.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/personStructure/TechnicalSkill.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/personStructure/Project.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/personStructure/Experiences.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/personStructure/Projects.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/controller/CVController.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/personStructure/GeneralInfo.java
 /usr/src/example_name/src/main/java/com/peqa/example_name/App.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/Profesionals.java
+/usr/src/example_name/src/main/java/com/peqa/example_name/structure/personStructure/Education.java

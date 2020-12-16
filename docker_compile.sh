@@ -29,8 +29,8 @@ MAVEN_PROJECT_NAME=example_name
 #===============================================================================
 
 # Inicializa el proyecto de maven usando el plugin: `maven-archetype-quickstart`
-$PWD/docker_run.sh mvn -f $MAVEN_PROJECT_NAME/pom.xml package
+sudo "$PWD"/docker_run.sh mvn -f $MAVEN_PROJECT_NAME/pom.xml package
 
 # Corrige los permisos de la carpeta `project` que fue generada dentro de maven
 # con permisos de root.
-sudo chown -R $USER:$(id -gn $USER) ./$MAVEN_DIRECTORY
+sudo chown -R $USER:$(id -gn $USER) "$PWD"/$MAVEN_DIRECTORY
