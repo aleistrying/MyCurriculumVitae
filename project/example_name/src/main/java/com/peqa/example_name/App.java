@@ -87,7 +87,7 @@ public class App {
         gi.setName("Alejandro");
         gi.setLastname("Parparcen");
         gi.setProfesionalTitle("Software Developer");
-        gi.setLocation("Panama City, Panama");
+        gi.setLocation("Panama, Panama City");
         gi.setAboutMe(
                 "I'm a guy who loves technology and is driven by the desire to learn, solve and create. All the challenges i give myself, i complete with efficency and accuracy. Details and quality matter most to me when working by myself or with a team, mediocrity isn't acceptable hence why I push myself and my peers to do our best.");
         return gi;
@@ -106,9 +106,9 @@ public class App {
 
     public static Educations initializeEducation() {
         Educations ed = new Educations();
-        //to-do, probably adding grade? and location ?
+        // to-do, probably adding grade? and location ?
         ed.addEducation("Instituto PC CENTER", 2016, 2017,
-                "Certificado de Reparacion de Computadoras: Reparacion Mantenimiento y Construccion de Computadoras");
+                "Certificado de Reparacion de Computadoras: Reparacion, Mantenimiento y Construccion de Computadoras");
         ed.addEducation("El Colegio de Panama", 2008, 2018, "Bachiller en Ciencias");
         ed.addEducation("Universidad Tecnologica de Panama", 2019, 2019, "Certificado de Linux Essentials");
         ed.addEducation("Universidad Tecnologica de Panama", 2019, 2022, "Licenciatura en Desarrollo de Software");
@@ -132,16 +132,23 @@ public class App {
                 "Helped create various screens in React. This system was a CRM that gave users accounts, with those accounts you could create a cart, and then use a credit card or yappy to pay.",
                 "Did Frontend screens using react classes, Material UI, Materialize and W3.CSS.",
                 "Worked the whole backend security system to create keys, salts, hashes, etc."));
+
+        ex.addExperience("Uman Tech Consulting", 2020, "Software Developer & Software Engineer", Arrays.asList(
+                "Worked with a Startup to create an app that manages KPIs (key performance indicators) from each of the users that buy the solution.",
+                "Did Frontend screens using react classes, Material UI, and W3.CSS.",
+                "Worked the whole backend security system to create keys, salts, hashes, etc.",
+                "Created most of the backend querys made in MongoDB using mongoose as a library.",
+                "Used heroku to deploy the app, and git to version manage."));
         return ex;
     }
 
     public static Projects initializeProjects() {
 
         Projects pr = new Projects();
-        pr.addProject("Test",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt enim tenetur libero corrupti saepe exercitationem ea eius nobis voluptas laudantium non quo voluptates, placeat quidem quae ab voluptatibus magni! Qui.",
-                "https://github.com/lapron3000", "https://github.com/lapron3000",
-                Arrays.asList("test", "magic", "coding", "React"));
+        pr.addProject("Profesional Curriculum Vitae",
+                "This is an aplication to show the CV of a profesional. This application has a frontend in JS, HTML, CSS and a backend in Java using Spark. The frontend communicates with the backend throughout an API created in Spark with Java.",
+                "https://github.com/lapron3000/MyCurriculumVitae", "https://github.com/lapron3000/MyCurriculumVitae",
+                Arrays.asList("Javascript", "HTML", "CSS", "Java", "Spark"));
         pr.addProject("Test2",
                 "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt enim tenetur libero corrupti saepe exercitationem ea eius nobis voluptas laudantium non quo voluptates, placeat quidem quae ab voluptatibus magni! Qui.Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt enim tenetur libero corrupti saepe exercitationem ea eius nobis voluptas laudantium non quo voluptates, placeat quidem quae ab voluptatibus magni! Qui.",
                 "https://github.com/lapron3000", "https://github.com/lapron3000",
@@ -156,8 +163,8 @@ public class App {
         ts.addTechnicalSkill("Front-end", Arrays.asList("HTML/CSS", "Bootstrap", "Materialize", "W3.CSS", "React"));
         ts.addTechnicalSkill("Back-end", Arrays.asList("Node JS", "Java", "PHP"));
         ts.addTechnicalSkill("Databases", Arrays.asList("MySQL", "MongoDB", "Oracle"));
-        ts.addTechnicalSkill("Others",
-                Arrays.asList("Git", "Heroku", "Amazon AWS", "Office365", "Unity","AutoCAD", "Google Search"));
+        ts.addTechnicalSkill("Others", Arrays.asList("Git", "Heroku", "Amazon AWS", "Office365", "Unity", "AutoCAD",
+                "Google Search", "Knowledge of Computer Parts"));
         return ts;
     }
 
