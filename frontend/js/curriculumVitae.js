@@ -40,9 +40,12 @@
                 if (detail.startsWith("http")) {
                     detail = `<a href="${detail}">${text} Link</a>`;
                 }
-                return `<li class="pop flex-row wrap justify-center align-center center mt-1" id="socialLink${i}"  >
-                    <div class="img-icon-container flex-row justify-center"><img  class="img" src="${pathToImage}" alt="${text} image"></div>
-                    </img> 
+                let style = document.createElement("style");
+                style.innerHTML = `.logo${i}{mask:url('${pathToImage}');}`;
+                document.getElementsByTagName('head')[0].appendChild(style);
+
+                return `<li class="pop flex-row wrap justify-center align-center center mt-1" id="socialLink${i}">
+                    <div class="img-icon-container flex-row justify-center"><div class="img socialIcon logo${i}" ></div></div>
                     <div class="detail"><h4 class="font-normal">${text}</h4><p class="font-normal word-break">${detail}</p></div>
                 </li>
                 `;
@@ -54,8 +57,8 @@
                     list += `<li class="skill">${skills[i]}</li>`;
                     i++;
                 }
-                return `<div class="skills-container > <h3 class="my-small">${categoryName}</h3>
-                              <ul class="my-small">${list}</ul></div>`;
+                return `<div class="skills-container"> <h3 class="my-small font-bold">${categoryName}</h3>
+                              <ul class="my-small flex-row wrap">${list}</ul></div>`;
             },
             projects: (description, keywords, projectName, sourceCode, tryOut) => {
                 if (sourceCode.startsWith('http')) {
