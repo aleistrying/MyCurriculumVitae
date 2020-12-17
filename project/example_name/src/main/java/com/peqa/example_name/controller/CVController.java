@@ -2,6 +2,7 @@ package com.peqa.example_name.controller;
 
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import spark.Request;
@@ -123,12 +124,12 @@ public class CVController {
         JSONObject generalInfo;
         try {
             body = new JSONObject(req.body());
-        } catch (Exception e) {
+        } catch (JSONException e) {
             return new JSONObject("{success:false, message:'Incorrect JSON Formatting.'}");
         }
         try {
             generalInfo = body.getJSONObject("generalInfo");
-        } catch (Exception e) {
+        } catch (JSONException e) {
             return new JSONObject("{success:false, message:'Incorrect JSON Formatting.'}");
         }
 
@@ -178,7 +179,7 @@ public class CVController {
         int id = 1;
         try {
             id = Integer.parseInt(req.params(":id"));
-        } catch (Exception e) {
+        } catch (JSONException e) {
             // console.log(e);
             System.out.println(e);
         }
@@ -201,14 +202,14 @@ public class CVController {
             // System.out.println(jsonExperiences.get(i));
             try {
                 value = jsonExperiences.getJSONObject(i);
-            } catch (Exception e) {
+            } catch (JSONException e) {
                 return new JSONObject("{success:false, message:'Incorrect JSON Formatting.'}");
             }
             List<String> detailsList = new ArrayList<>();
             int k = 0;
             try {
                 details = value.getJSONArray("details");
-            } catch (Exception e) {
+            } catch (JSONException e) {
                 return new JSONObject("{success:false, message:'Incorrect JSON Formatting.'}");
             }
             while (k < details.length()) {
