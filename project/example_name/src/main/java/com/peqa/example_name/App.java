@@ -57,33 +57,29 @@ public class App {
         get(Path.Web.GET_CV, (req, res) -> CVController.serveCV(req, res, profesionals));
         get(Path.Web.GET_CV_MAIN, (req, res) -> CVController.serveCV(req, res, profesionals));
 
-        get(Path.Web.GET_GENERAL_INFO, (req, res) -> CVController.serveGeneralInfo(req, res, profesionals));
-        get(Path.Web.GET_SOCIAL_LINKS, (req, res) -> CVController.serveSocialLinks(req, res, profesionals));
-        get(Path.Web.GET_EXPERIENCE, (req, res) -> CVController.serveExperience(req, res, profesionals));
-        get(Path.Web.GET_EDUCATION, (req, res) -> CVController.serveEducation(req, res, profesionals));
-        get(Path.Web.GET_PROJECTS, (req, res) -> CVController.serveProjects(req, res, profesionals));
+        get(Path.Web.GET_GENERAL_INFO, (req, res) -> CVController.handleGetGeneralInfo(req, res, profesionals));
+        get(Path.Web.GET_SOCIAL_LINKS, (req, res) -> CVController.handleGetSocialLinks(req, res, profesionals));
+        get(Path.Web.GET_EXPERIENCES, (req, res) -> CVController.handleGetExperiences(req, res, profesionals));
+        get(Path.Web.GET_EDUCATIONS, (req, res) -> CVController.handleGetEducations(req, res, profesionals));
+        get(Path.Web.GET_PROJECTS, (req, res) -> CVController.handleGetProjects(req, res, profesionals));
+        get(Path.Web.GET_TECHNICAL_SKILLS, (req, res) -> CVController.handleGetTechnicalSkills(req, res, profesionals));
 
-        // put routes
-        post(Path.Web.PUT_EDUCATION, (req, res) -> {
-            JSONObject json = new JSONObject(req);
-
-            return json;
-        });
-
-        post(Path.Web.POST_EXPERIENCE, (req, res) -> {
-            res.type("aplication/json");
-            JSONObject json = new JSONObject(req);
-
-            return json;
-        });
-
-        post("/addProject", (req, res) -> {
-            res.type("aplication/json");
-            JSONObject json = new JSONObject(req);
-
-            return json;
-        });
-
+        // // put routes 
+        put(Path.Web.PUT_GENERAL_INFO, (req, res) -> CVController.handlePutGeneralInfo(req, res, profesionals));
+        put(Path.Web.PUT_SOCIAL_LINKS, (req, res) -> CVController.handlePutSocialLinks(req, res, profesionals));
+        put(Path.Web.PUT_EXPERIENCES, (req, res) -> CVController.handlePutExperiences(req, res, profesionals));
+        put(Path.Web.PUT_EDUCATIONS, (req, res) -> CVController.handlePutEducations(req, res, profesionals));
+        put(Path.Web.PUT_PROJECTS, (req, res) -> CVController.handlePutProjects(req, res, profesionals));
+        put(Path.Web.PUT_TECHNICAL_SKILLS, (req, res) -> CVController.handlePutTechnicalSkills(req, res, profesionals));
+ 
+        // // post routes  can't be done this way, has to be a whole profesional object to post. or some other way
+        // post(Path.Web.POST_GENERAL_INFO, (req, res) -> CVController.handlePostGeneralInfo(req, res, profesionals));
+        // post(Path.Web.POST_SOCIAL_LINKS, (req, res) -> CVController.handlePostSocialLinks(req, res, profesionals));
+        // post(Path.Web.POST_EXPERIENCES, (req, res) -> CVController.handlePostExperiences(req, res, profesionals));
+        // post(Path.Web.POST_EDUCATIONS, (req, res) -> CVController.handlePostEducations(req, res, profesionals));
+        // post(Path.Web.POST_PROJECTS, (req, res) -> CVController.handlePostProjects(req, res, profesionals));
+        // post(Path.Web.POST_TECHNICAL_SKILLS, (req, res) -> CVController.handlePostTechnicalSkills(req, res, profesionals));
+ 
         enableCors();
 
     }
