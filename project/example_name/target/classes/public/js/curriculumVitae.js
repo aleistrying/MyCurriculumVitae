@@ -1,7 +1,7 @@
 (() => {
     const App = {
         config: {
-            baseURL: "http://localhost:4567/api/v1",
+            baseURL: "http://localhost:80/api/v1",
             URLRoute: {
                 getCV: (id) => { return `${App.config.baseURL}/CurriculumVitae/${id}` },
             },

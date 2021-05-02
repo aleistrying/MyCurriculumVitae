@@ -9,17 +9,17 @@
 			"name": "semestral",
 			"item": [
 				{
-					"name": "http://localhost:4567/datos-generales",
+					"name": "http://localhost:80/datos-generales",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4567/datos-generales",
+							"raw": "http://localhost:80/datos-generales",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "4567",
+							"port": "80",
 							"path": [
 								"datos-generales"
 							]
@@ -28,7 +28,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:4567/datos-generales",
+					"name": "http://localhost:80/datos-generales",
 					"request": {
 						"method": "PUT",
 						"header": [],
@@ -42,12 +42,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4567/datos-generales",
+							"raw": "http://localhost:80/datos-generales",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "4567",
+							"port": "80",
 							"path": [
 								"datos-generales"
 							]
@@ -56,17 +56,17 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:4567/estudios",
+					"name": "http://localhost:80/estudios",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:4567/estudios",
+							"raw": "http://localhost:80/estudios",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "4567",
+							"port": "80",
 							"path": [
 								"estudios"
 							]
@@ -75,7 +75,7 @@
 					"response": []
 				},
 				{
-					"name": "http://localhost:4567/estudios",
+					"name": "http://localhost:80/estudios",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -89,12 +89,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:4567/estudios",
+							"raw": "http://localhost:80/estudios",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "4567",
+							"port": "80",
 							"path": [
 								"estudios"
 							]

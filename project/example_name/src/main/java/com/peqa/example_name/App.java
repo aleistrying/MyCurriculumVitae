@@ -102,7 +102,7 @@ public class App {
         sl.addSocialLinks("WhatsApp", "+507 6938-9892", "../img/WhatsApp.svg");
         sl.addSocialLinks("Email", "alejandroparparcen@yahoo.com", "../img/Email.svg");
         sl.addSocialLinks("GitHub", "https://github.com/lapron3000", "../img/GitHub.svg");
-        sl.addSocialLinks("Portfolio", "https://to-do.AlejoWeb.com", "../img/Portfolio.svg");
+        sl.addSocialLinks("Portfolio", "http://144.172.75.71/", "../img/Portfolio.svg");
         return sl;
     }
 
@@ -141,6 +141,9 @@ public class App {
                 "Worked the whole backend security system to create keys, salts, hashes, etc.",
                 "Created most of the backend querys made in MongoDB using mongoose as a library.",
                 "Used heroku to deploy the app, and git to version manage."));
+        ex.addExperience("Podcrash", 2021, "Contractor Software Developer", Arrays.asList(
+                "Created a Discord bot for a competitive league system called the Minecraft Competitive C. League (MCCL)",
+                "Worked on the launcher UI for the podcrash client utilizing React.js."));
         return ex;
     }
 

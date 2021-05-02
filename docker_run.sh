@@ -32,5 +32,5 @@ DOCKER_IMAGE_TAG=latest
 #===============================================================================
 docker run --rm --name $DOCKER_CONTAINER_NAME \
            -v "$PWD/$MAVEN_DIRECTORY:/usr/src" \
-           -p 4567:4567 \
+           -p 80:4567 \
            -it $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG $@
