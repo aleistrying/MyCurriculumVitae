@@ -2,10 +2,10 @@
     const App = {
         config: {
             production: true,
-            ip: () => { return App.config.production ? "alejandrop.com" : "localhost" },//144.172.75.71
+            // ip: () => {  },////return App.config.production ? "alejandrop.com" : "localhost" },//144.172.75.71
             port: "80",
             https: false,
-            baseURL: () => { return `http${App.config.https ? "s" : ""}://${App.config.ip()}:${App.config.port}/api/v1` },
+            baseURL: () => { return `http${App.config.https ? "s" : ""}://${window.location.hostname}:${App.config.port}/api/v1` },
             URLRoute: {
                 getCV: (id) => { return `${App.config.baseURL()}/CurriculumVitae/${id}` },
             },
