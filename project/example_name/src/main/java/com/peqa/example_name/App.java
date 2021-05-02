@@ -154,10 +154,10 @@ public class App {
                 "This is an aplication to show the CV of a profesional. This application has a frontend in JS, HTML, CSS and a backend in Java using Spark. The frontend communicates with the backend throughout an API created in Spark with Java.",
                 "https://github.com/lapron3000/MyCurriculumVitae", "https://github.com/lapron3000/MyCurriculumVitae",
                 Arrays.asList("Javascript", "HTML", "CSS", "Java", "Spark"));
-        pr.addProject("Test2",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt enim tenetur libero corrupti saepe exercitationem ea eius nobis voluptas laudantium non quo voluptates, placeat quidem quae ab voluptatibus magni! Qui.Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt enim tenetur libero corrupti saepe exercitationem ea eius nobis voluptas laudantium non quo voluptates, placeat quidem quae ab voluptatibus magni! Qui.",
-                "https://github.com/lapron3000", "https://github.com/lapron3000",
-                Arrays.asList("test", "magic", "coding", "React2"));
+        // pr.addProject("Test2",
+        //         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt enim tenetur libero corrupti saepe exercitationem ea eius nobis voluptas laudantium non quo voluptates, placeat quidem quae ab voluptatibus magni! Qui.Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt enim tenetur libero corrupti saepe exercitationem ea eius nobis voluptas laudantium non quo voluptates, placeat quidem quae ab voluptatibus magni! Qui.",
+        //         "https://github.com/lapron3000", "https://github.com/lapron3000",
+        //         Arrays.asList("test", "magic", "coding", "React2"));
         return pr;
     }
 
