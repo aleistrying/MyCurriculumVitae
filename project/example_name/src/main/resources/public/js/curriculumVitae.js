@@ -1,7 +1,10 @@
 (() => {
     const App = {
         config: {
-            baseURL: "http://localhost:80/api/v1",
+            ip: "localhost",//"144.172.75.71",
+            port: "80",
+            https: false,
+            baseURL: `http${App.config.https ? "s" : ""}://${App.config.ip}:${App.config.port}/api/v1`,
             URLRoute: {
                 getCV: (id) => { return `${App.config.baseURL}/CurriculumVitae/${id}` },
             },
