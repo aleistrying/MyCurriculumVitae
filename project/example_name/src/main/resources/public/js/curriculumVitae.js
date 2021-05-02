@@ -2,7 +2,7 @@
     const App = {
         config: {
             production: true,
-            ip: () => { return App.config.production ? "144.172.75.71" : "localhost" },
+            ip: () => { return App.config.production ? "alejandrop.com" : "localhost" },//144.172.75.71
             port: "80",
             https: false,
             baseURL: () => { return `http${App.config.https ? "s" : ""}://${App.config.ip()}:${App.config.port}/api/v1` },
@@ -45,7 +45,7 @@
                     detail = `<a href="${detail}">${text} Link</a>`;
                 }
                 let style = document.createElement("style");
-                style.innerHTML = `.logo${i}{mask:url('${pathToImage}') 50% 50%/contain no-repeat;-wekit-mask:url('${pathToImage}') 50% 50%/contain no-repeat;}`;
+                style.innerHTML = `.logo${i}{mask:url('${pathToImage}') 50% 50%/contain no-repeat;-webkit-mask:url('${pathToImage}') 50% 50%/contain no-repeat;}`;
                 document.getElementsByTagName('head')[0].appendChild(style);
 
                 return `<li class="pop flex-row wrap justify-center align-center center mt-1" id="socialLink${i}">
