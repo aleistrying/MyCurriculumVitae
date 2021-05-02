@@ -41,7 +41,7 @@
                     detail = `<a href="${detail}">${text} Link</a>`;
                 }
                 let style = document.createElement("style");
-                style.innerHTML = `.logo${i}{mask:url('${pathToImage}') 50% 50%/contain no-repeat;}`;
+                style.innerHTML = `.logo${i}{mask:url('${pathToImage}') 50% 50%/contain no-repeat;-webkit-mask:url('${pathToImage}') 50% 50%/contain no-repeat;}`;
                 document.getElementsByTagName('head')[0].appendChild(style);
 
                 return `<li class="pop flex-row wrap justify-center align-center center mt-1" id="socialLink${i}">
