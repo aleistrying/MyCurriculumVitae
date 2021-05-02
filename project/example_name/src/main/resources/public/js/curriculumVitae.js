@@ -1,12 +1,13 @@
 (() => {
     const App = {
         config: {
-            ip: "localhost",//"144.172.75.71",
+            production: true,
+            ip: () => { return App.config.production ? "144.172.75.71" : "localhost" },
             port: "80",
             https: false,
-            baseURL: `http${App.config.https ? "s" : ""}://${App.config.ip}:${App.config.port}/api/v1`,
+            baseURL: () => { return `http${App.config.https ? "s" : ""}://${App.config.ip()}:${App.config.port}/api/v1` },
             URLRoute: {
-                getCV: (id) => { return `${App.config.baseURL}/CurriculumVitae/${id}` },
+                getCV: (id) => { return `${App.config.baseURL()}/CurriculumVitae/${id}` },
             },
         },
         htmlElements: {
